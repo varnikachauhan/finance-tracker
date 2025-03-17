@@ -1,0 +1,37 @@
+scalar Date
+scalar Email
+
+type Users {
+    userID: ID!
+    firstName: String!
+    lastName: String!
+    email: Email!
+    pwd: String!
+    createdDate: Date!
+}
+
+type Accounts {
+    accountId: ID!
+    userID : ID!
+    accountType: String!
+    accountName: String!
+    accountLimit: Float!
+}
+
+type Categories {
+    categoryId: ID!
+    userID: ID!
+    categoryName: String!
+    categoryType: String!
+    createdDate: Date!
+}
+
+type Transactions {
+    transactionId: ID!
+    userID: ID!
+    categoryId: ID!
+    accountId: ID!
+    transactionType: String!
+    amount: Float!
+    createdDate: Date!
+}

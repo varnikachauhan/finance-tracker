@@ -1,3 +1,13 @@
+package com.services.finance_tracker.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(schema = "public", name = "transactions")
@@ -11,7 +21,7 @@ public class Transactions {
     private Timestamp createdAt;
 
     @Id
-    @GeneratedValue(startegy = GenerationType.Entity)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getTransactionId() {
         return transactionId;
     }
@@ -65,7 +75,7 @@ public class Transactions {
         this.transactionType = transactionType;
     }
 
-    @Column(name = "created_at")
+    @Column(name = "created_date")
     public Timestamp getCreatedAt() {
         return createdAt;
     }   
